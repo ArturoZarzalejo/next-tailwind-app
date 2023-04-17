@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.links-menu.active {
-    color: blue;;
-}
+.bg-blue-600 {
+    background-color: #ff00ff; /* El color de fondo que deseas aplicar */
+  }

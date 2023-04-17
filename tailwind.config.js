@@ -8,18 +8,6 @@ module.exports = {
   darkMode: "class",
   theme: {
     colors: {
-      blue: {
-        'primary': {
-          DEFAULT: '#2596be',
-          light: '#2596be',
-          dark: 'white',
-        },
-        'secondary': {
-          DEFAULT: '#f3f4f6',
-          light: '#f3f4f6',
-          dark: '#111827',
-        },
-      },
       purple: "#7e5bef",
       pink: "#ff49db",
       orange: "#ff7849",
@@ -34,12 +22,8 @@ module.exports = {
       serif: ["Merriweather", "serif"],
     },
     extend: {
-      spacing: {
-        "8xl": "96rem",
-        "9xl": "128rem",
-      },
-      borderRadius: {
-        "4xl": "2rem",
+      transitionTimingFunction: {
+        'custom-bezier': 'cubic-bezier(0.1, 0.7, 0.3, 1)',
       },
     },
   },

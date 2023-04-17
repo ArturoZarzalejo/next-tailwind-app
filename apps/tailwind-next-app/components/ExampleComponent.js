@@ -8,7 +8,7 @@ const ExampleComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon/ditto");
+        const response = await fetch("/api/hello");
         const dataJson = await response.json();
         setData(dataJson);
       } catch (error) {

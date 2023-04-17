@@ -1,47 +1,27 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import ThemeToggler from 'components/ThemeToggler';
-import React, { useState, useRef, useEffect } from 'react';
-
-function getPathAndQueryString() {
-  const url = new URL(window.location.href);
-  return [url.pathname, url.search];
-}
+import React from 'react';
 
 const RouteParams = [
   {
     name: 'Home',
     href: '/',
-    idRef: 'route1',
   },
   {
     name: 'My Profile',
     href: '/user-profile',
-    idRef: 'route2',
   },
   {
     name: 'Security',
-    href: '/user-profile',
-    idRef: 'route3',
+    href: '/user-profile3',
   },
 ];
 
 const NavRoutingComponent = () => {
-  const [activeRouteState, setActiveRouteState] = useState('');
-
-  function deleteActiveClass (arraySelectors) {
-    arraySelectors.forEach((item) => item.classList.remove('active'))
-  }
-
-  useEffect(() => {
-    document.querySelector(`[href="${getPathAndQueryString()[0]}"]`).classList.add('active')
-  }, [])
-
-  function setActiveRoute (event, item) {
-    deleteActiveClass(document.querySelectorAll('.links-menu'))
-    document.querySelector(`[href="${item.href}"]`).classList.add('active');
-  };
+  const pathname = usePathname();
 
   return (
     <aside className="flex flex-col absolute top-0 left-0 h-screen z-10">
@@ -49,12 +29,10 @@ const NavRoutingComponent = () => {
         <ul>
           {RouteParams?.map((item, key) => (
             <li key={key}>
-              <Link
-                className="links-menu flex p-4 active:bg-blue-600"
-                href={item.href}
-                onClick={(event) => setActiveRoute(event, item)}
-              >
-                <span>{item.name}</span>
+              <Link href={item.href} className={`transition-all duration-300 ease-custom-bezier links-menu flex p-4 ${
+                    pathname === item.href ? 'bg-blue-600' : ''
+                  }`}>
+                  <span>{item.name}</span>
               </Link>
             </li>
           ))}
