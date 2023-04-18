@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import ExampleComponent from '../../components/ExampleComponent';
-
+import { ReactComponent as Logo } from '../../public/edit.svg';
 
 async function getData() {
   const res = await fetch(' https://pokeapi.co/api/v2/pokemon/ditto');
@@ -27,14 +27,15 @@ export default async function Page() {
           width={48}
           height={48}
         />
-        <div className="flex-1 flex flex-row justify-between">
+        <div className="flex-1 flex flex-row justify-between items-center">
           <div className="flex flex-col text-sm">
             <span className="font-bold">Alba Cositas</span>
             <span className="font-medium">Team Manager</span>
             <span className="font-thin">Toledo, Pueblucho de Toledo</span>
           </div>
-          <button>
-            Iconito
+          <button className="text-purple mr-2 h-10 w-16 p-2 justify-between rounded-full items-center text-xs flex border border-[rgba(0,0,0,0.2)]">
+            Edit
+            <Logo className="w-5 h-5 fill-[currentColor]"></Logo>
           </button>
         </div>
       </div>
