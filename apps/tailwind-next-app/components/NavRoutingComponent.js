@@ -20,11 +20,11 @@ const RouteParams = [
   },
 ];
 
-const NavRoutingComponent = () => {
+const NavRoutingComponent = ({className}) => {
   const pathname = usePathname();
 
   return (
-    <aside className="flex flex-col absolute top-0 left-0 h-screen z-10">
+    <aside className={`flex flex-col absolute top-0 left-0 h-screen z-10 ${className}`}>
       <nav className="flex-1 w-80">
         <ul>
           {RouteParams?.map((item, key) => (

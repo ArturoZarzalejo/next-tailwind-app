@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 .bg-blue-600 {
-    background-color: #ff00ff; /* El color de fondo que deseas aplicar */
+    background-color: blue;
+    color: #fff;
   }

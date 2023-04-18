@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${RobotoFlex.variable} font-sans`}>
       <body className="flex min-h-screen flex-row">
         <Providers>
-          <NavRoutingComponent></NavRoutingComponent>
+          <NavRoutingComponent className="border-r border-r-[rgba(0,0,0,0.2)]"></NavRoutingComponent>
 
           <main className="relative ps-80 flex-1">{children}</main>
         </Providers>
