@@ -7,16 +7,6 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
-    colors: {
-      purple: "#7e5bef",
-      pink: "#ff49db",
-      orange: "#ff7849",
-      green: "#13ce66",
-      yellow: "#ffc82c",
-      "text-white": "#fff",
-      gray: "#8492a6",
-      "gray-light": "#d3dce6", 
-    },
     fontFamily: {
       sans: ["var(--robotoflex-font)", "sans-serif"],
       serif: ["Merriweather", "serif"],

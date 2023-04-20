@@ -20,11 +20,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${RobotoFlex.variable} font-sans`}>
-      <body className="flex min-h-screen flex-row">
+      <body className="flex flex-row box-border">
         <Providers>
-          <NavRoutingComponent className="border-r border-r-[rgba(0,0,0,0.2)]"></NavRoutingComponent>
-
-          <main className="relative ps-80 flex-1">{children}</main>
+          <NavRoutingComponent className="p-4"></NavRoutingComponent>
+          <main className="relative flex-1">{children}</main>
         </Providers>
       </body>
     </html>

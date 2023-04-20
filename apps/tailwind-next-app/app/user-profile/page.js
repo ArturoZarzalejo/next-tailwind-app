@@ -1,6 +1,5 @@
-import Image from 'next/image';
-import ExampleComponent from '../../components/ExampleComponent';
-import { ReactComponent as Logo } from '../../public/edit.svg';
+import UserDataInfo from '../../utils/UserDataInfo.js';
+import UserInfoComponent from 'components/UserInfoComponent.js';
 
 async function getData() {
   const res = await fetch(' https://pokeapi.co/api/v2/pokemon/ditto');
@@ -12,37 +11,17 @@ async function getData() {
 }
 
 export default async function Page() {
-  const data = await getData();
-  const profilePicUrl =
-    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80';
+  // const data = await getData();
+
+  const instance = new UserDataInfo();
+  const dataUser = await instance.getUserDataInfo();
 
   return (
-    <div className="p-4">
-      <h2 className="font-bold py-4">My Profile</h2>
-      <div className="py-4 flex items-center border border-[rgba(0,0,0,0.2)] rounded-xl">
-        <Image
-          className="mx-4 w-16 h-16 object-top object-cover rounded-full"
-          src={profilePicUrl}
-          alt="Picture of the author"
-          width={48}
-          height={48}
-        />
-        <div className="flex-1 flex flex-row justify-between items-center">
-          <div className="flex flex-col text-sm">
-            <span className="font-bold">Alba Cositas</span>
-            <span className="font-medium">Team Manager</span>
-            <span className="font-thin">Toledo, Pueblucho de Toledo</span>
-          </div>
-          <button className="text-purple mr-2 h-10 w-16 p-2 justify-between rounded-full items-center text-xs flex border border-[rgba(0,0,0,0.2)]">
-            Edit
-            <Logo className="w-5 h-5 fill-[currentColor]"></Logo>
-          </button>
-        </div>
-      </div>
+    <UserInfoComponent>
       {/* {data.abilities.map((item, key) => (
         <div key={key}>{JSON.stringify(item, null, 2)}</div>
       ))} */}
       {/* <ExampleComponent></ExampleComponent> */}
-    </div>
+    </UserInfoComponent>
   );
 }
