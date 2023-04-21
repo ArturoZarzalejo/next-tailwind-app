@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ThemeToggler from 'components/ThemeToggler';
-import { Contacts } from './Contacts';
+import Contacts from './Contacts';
 import React from 'react';
 import Image from 'next/image';
 import { ReactComponent as Home } from '../public/home.svg';
