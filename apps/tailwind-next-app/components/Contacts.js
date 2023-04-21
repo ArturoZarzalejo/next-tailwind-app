@@ -2,7 +2,7 @@ import React from 'react';
 import { ReactComponent as Message } from '../public/message.svg';
 import Link from 'next/link';
 
-function Contacts() {
+const Contacts = () => {
   return (
     <div className="w-10/12 overflow-hidden min-h-[90px]">
       <span className="text-xl font-bold">Contacts</span>
@@ -79,4 +79,4 @@ function Contacts() {
   );
 }
 
-export { Contacts };
+export default Contacts;
