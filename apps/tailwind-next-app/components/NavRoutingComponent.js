@@ -18,34 +18,34 @@ import { ReactComponent as Check } from '../public/check.svg';
 
 const RouteParams = [
   {
-    name: 'Home',
+    name: 'Feed',
     href: '/',
-    icon: <Home className="w-8 h-8" />,
+    icon: <Home className="w-6 h-6" />,
   },
   {
     name: 'My Profile',
     href: '/user-profile',
-    icon: <ViewAllAlt className="w-8 h-8" />,
+    icon: <ViewAllAlt className="w-6 h-6" />,
   },
   {
     name: 'My favorites',
     href: '/user-sssss',
-    icon: <Bookmark className="w-8 h-8" />,
+    icon: <Bookmark className="w-6 h-6" />,
   },
   {
     name: 'Direct',
     href: '/asfasf',
-    icon: <Send className="w-8 h-8 -rotate-45" />,
+    icon: <Send className="w-6 h-6 -rotate-45" />,
   },
   {
     name: 'Stats',
     href: '/user-profile3',
-    icon: <Stats className="w-8 h-8" />,
+    icon: <Stats className="w-6 h-6" />,
   },
   {
     name: 'Settings',
     href: '/user-profile4',
-    icon: <Settings className="w-8 h-8" />,
+    icon: <Settings className="w-6 h-6" />,
   },
 ];
 
@@ -91,7 +91,7 @@ const NavRoutingComponent = ({ className }) => {
             >
               <Link
                 href={item.href}
-                className={`flex justify-center items-center gap-3 transition-all duration-300 ease-custom-bezier links-menu p-4 font-bold text-sm `}
+                className={`flex justify-center items-center gap-2 transition-all duration-300 ease-custom-bezier links-menu p-2 font-bold text-sm `}
               >
                 {item?.icon && item?.icon}
                 <span
