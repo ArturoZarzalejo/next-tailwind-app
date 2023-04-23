@@ -20,32 +20,32 @@ const RouteParams = [
   {
     name: 'Feed',
     href: '/',
-    icon: <Home className="w-6 h-6" />,
+    icon: <Home className="w-10 h-10 md:w-6 md:h-6" />,
   },
   {
     name: 'My Profile',
     href: '/user-profile',
-    icon: <ViewAllAlt className="w-6 h-6" />,
+    icon: <ViewAllAlt className="w-10 h-10 md:w-6 md:h-6" />,
   },
   {
     name: 'My favorites',
     href: '/user-sssss',
-    icon: <Bookmark className="w-6 h-6" />,
+    icon: <Bookmark className="w-10 h-10 md:w-6 md:h-6" />,
   },
   {
     name: 'Direct',
     href: '/asfasf',
-    icon: <Send className="w-6 h-6 -rotate-45" />,
+    icon: <Send className="w-10 h-10 md:w-6 md:h-6 -rotate-45" />,
   },
   {
     name: 'Stats',
     href: '/user-profile3',
-    icon: <Stats className="w-6 h-6" />,
+    icon: <Stats className="w-10 h-10 md:w-6 md:h-6" />,
   },
   {
     name: 'Settings',
     href: '/user-profile4',
-    icon: <Settings className="w-6 h-6" />,
+    icon: <Settings className="w-10 h-10 md:w-6 md:h-6" />,
   },
 ];
 
@@ -56,13 +56,15 @@ const NavRoutingComponent = ({ className }) => {
     'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80';
 
   return (
-    <aside className={`flex flex-col h-screen z-10  ${className}`}>
+    <aside
+      className={`flex flex-col h-screen z-10 motion-reduce:hidden  ${className}`}
+    >
       <nav
-        className="w-80 px-4 h-full py-10 flex flex-col  items-center gap-8 relative shadow box-border rounded-xl bg-white dark:bg-[#0C0D0D]
+        className="w-20 md:w-80 md:px-4 h-full py-10 flex flex-col items-center gap-8 relative shadow box-border rounded-xl bg-white dark:bg-[#0C0D0D]
           "
       >
         <header className="flex flex-col gap-2 items-center">
-          <div className="relative">
+          <div className="hidden md:block relative">
             <Image
               className="mx-4 w-20 h-20 object-top object-cover rounded-full"
               src={profilePicUrl}
@@ -74,14 +76,14 @@ const NavRoutingComponent = ({ className }) => {
               <Check className="w-4 h-4" />
             </button>
           </div>
-          <div className="flex flex-col">
+          <div className="md:flex flex-col hidden ">
             <span className="font-bold text-lg pt-1">Cyndy Lillibridge</span>
             <span className="font-semibold text-xs text-zinc-400">
               Torrance, CA, United States
             </span>
           </div>
         </header>
-        <ul className="border-y-[#E8E7E7] border-y-[1px] border-dashed py-6 w-11/12">
+        <ul className="flex flex-col items-center md:items-start border-y-[#E8E7E7] border-y-[1px] border-dashed py-6 w-11/12">
           {RouteParams?.map((item, key) => (
             <li
               key={key}
@@ -91,11 +93,11 @@ const NavRoutingComponent = ({ className }) => {
             >
               <Link
                 href={item.href}
-                className={`flex justify-center items-center gap-2 transition-all duration-300 ease-custom-bezier links-menu p-2 font-bold text-sm `}
+                className={`flex justify-center items-center gap-2 transition-all duration-300 ease-custom-bezier links-menu p-2 font-semibold text-sm `}
               >
                 {item?.icon && item?.icon}
                 <span
-                  className={`${
+                  className={`hidden md:block ${
                     pathname === item.href
                       ? 'text-[#4D77FF]'
                       : 'text-[#0A0A0A] dark:text-[#F3F3F3]'
@@ -107,7 +109,7 @@ const NavRoutingComponent = ({ className }) => {
             </li>
           ))}
         </ul>
-        <Contacts />
+        {/* <Contacts /> */}
         <footer className="flex flex-col gap-5 border-t-[#E8E7E7] border-t-[1px] border-dashed py-6 w-11/12 relative">
           <Link
             className="absolute -top-7 text-sm left-0 right-0 mx-auto w-fit text-[#4D77FF]"
