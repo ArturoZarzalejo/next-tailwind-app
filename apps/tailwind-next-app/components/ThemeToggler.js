@@ -14,7 +14,6 @@ const ThemeToggler = ({ className }) => {
       {(theme === 'light' && <Moon className="w-6 h-6" />) || (
         <Sun className="w-6 h-6" />
       )}
-      {(theme === 'light' && `Dark`) || `Light`}
     </button>
   );
 };
