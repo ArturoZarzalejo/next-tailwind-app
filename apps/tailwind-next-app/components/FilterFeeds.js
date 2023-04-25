@@ -6,13 +6,51 @@ import { ReactComponent as Send } from '../public/send.svg';
 import { ReactComponent as Stats } from '../public/stats.svg';
 
 import Feeds from 'components/Feeds';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+const mockDataFeeds = [
+  {
+    name: 'Ráuul',
+    alias: '@rauul87',
+  },
+  {
+    name: 'Tommy',
+    alias: '@tommyh1de',
+  },
+  {
+    name: 'Mari',
+    alias: '@mari_nicolo',
+  },
+  {
+    name: 'Sofia',
+    alias: '@Sofiasoares85',
+  },
+];
+
+const ModifyDataFeeds = (filterText, fieldsDataSearch) =>
+  mockDataFeeds.filter(
+    (feed) =>
+      fieldsDataSearch.filter(
+        (field) =>
+          feed[field].toLowerCase().indexOf(filterText.toLowerCase()) !== -1
+      ).length
+  );
 
 const FilterFeeds = () => {
   const [searchText, setSearchText] = useState('');
+  const [dataFeeds, setDataFeeds] = useState([]);
+
+  useEffect(() => {
+    
+    if (searchText) {
+      setDataFeeds(ModifyDataFeeds(searchText, ['alias', 'name']));
+    } else {
+      setDataFeeds(mockDataFeeds);
+    }
+  }, [searchText]);
 
   function handleKeyUp(event) {
-    console.log('Tecla soltada:', event.target.value);
+    return setSearchText(event.target.value);
   }
 
   return (
@@ -35,7 +73,7 @@ const FilterFeeds = () => {
         </div>
       </header>
 
-      <Feeds className="my-4" />
+      <Feeds feedData={dataFeeds} className="my-4" />
     </div>
   );
 };

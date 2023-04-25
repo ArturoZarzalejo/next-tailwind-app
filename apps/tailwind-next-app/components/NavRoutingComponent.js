@@ -66,9 +66,9 @@ const NavRoutingComponent = ({ className }) => {
       className={`flex flex-col md:h-screen z-10 motion-reduce:hidden ${className}`}
     >
       <nav className="md:hidden shadow">
-        <div className="bg-white p-2 flex">
+        <div className="bg-white flex">
           <button
-            className="flex m-2 w-8 h-8 md:hidden items-center"
+            className="flex p-2 m-2 w-10 h-10 md:hidden items-center hover:shadow rounded-full"
             onClick={() => setToggleMenu(!toggleMenu)}
           >
             <Menu></Menu>
@@ -93,9 +93,9 @@ const NavRoutingComponent = ({ className }) => {
          dark:bg-[#0C0D0D]
 `}
       >
-        <div className="absolute left-0">
+        <div className="absolute top-2 left-2 hover:shadow rounded-full">
           <button
-            className="flex md:hidden m-2 w-8 h-8 items-center"
+            className="flex md:hidden m-1 w-8 h-8 items-center"
             onClick={() => setToggleMenu(!toggleMenu)}
           >
             <MenuOpen></MenuOpen>

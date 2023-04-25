@@ -1,23 +1,23 @@
 'use client';
 
-import Link from 'next/link';
-import Image from 'next/image';
 import { ReactComponent as Send } from '../public/send.svg';
 
-const Feeds = () => {
+const Feeds = (mockDataFeeds) => {
+  const {feedData} = mockDataFeeds;
+  // console.log(feedData)
   return (
     <div className="">
       <h3 className="my-6 text-3xl font-semibold">Feeds</h3>
 
-      {[1, 2, 3, 4].map((item, key) => (
+      {feedData.map((item, key) => (
         <div
           key={key}
           className="flex flex-col my-6 bg-white shadow box-border rounded-xl"
         >
           <div className="flex items-center justify-between p-4 px-6">
             <div className="flex flex-col">
-              <span>Robert Fox</span>
-              <span>@Alessandroveronezi</span>
+              <span>{item?.name}</span>
+              <span>{item?.alias}</span>
             </div>
             <button className="flex items-center">...</button>
           </div>
