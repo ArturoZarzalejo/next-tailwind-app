@@ -15,7 +15,7 @@ const UserInfoComponent = () => {
     'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80';
 
   const [data, setData] = useState();
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState(['angular', 'dev', 'previamenteenbbdd', 'gpt', 'flask']);
   const [showMap, setShowMap] = useState(false);
 
   function manejarDatos(datos, showMapValue) {
@@ -23,8 +23,6 @@ const UserInfoComponent = () => {
   }
 
   useEffect(() => {
-
-    console.log('funciona', tags)
     // const fetchData = async () => {
     //   try {
     //     const response = await fetch('/api/hello');
@@ -34,11 +32,8 @@ const UserInfoComponent = () => {
     //     console.error('Error al obtener los datos:', error);
     //   }
     // };
-
     // fetchData();
   }, [tags]);
-
-  console.log(data);
 
   return (
     <div className="p-4">

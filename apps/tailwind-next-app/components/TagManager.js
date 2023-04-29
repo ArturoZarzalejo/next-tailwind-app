@@ -5,7 +5,11 @@ import { ReactComponent as Delete } from '../public/delete.svg';
 
 const TagManager = ({ tags, setTags }) => {
   const handleAddTag = (tag) => {
-    setTags([...tags, tag]);
+    const find = tags.find((t) => {
+      return t.toLowerCase() === tag.toLowerCase();
+    });
+
+    return !find && setTags([...tags, tag]);
   };
 
   const handleDeleteTag = (tag) => {
@@ -15,7 +19,7 @@ const TagManager = ({ tags, setTags }) => {
 
   return (
     <div>
-      <h2>Tags</h2>
+      <h2>Tags Admin</h2>
       <ul className="flex flex-col">
         {tags.map((tag) => (
           <li
@@ -33,7 +37,7 @@ const TagManager = ({ tags, setTags }) => {
         type="text"
         placeholder="Agregar etiqueta"
         onKeyDown={(e) => {
-          if (e.key === 'Enter') {
+          if (e.key === 'Enter' && e.target.value) {
             handleAddTag(e.target.value);
             e.target.value = '';
           }
