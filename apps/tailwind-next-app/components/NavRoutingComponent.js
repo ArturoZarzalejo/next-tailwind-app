@@ -123,25 +123,29 @@ const NavRoutingComponent = ({ className }) => {
               </span>
             </div>
           </header>
-          <ul className="flex flex-col items-start border-t-[#E8E7E7] border-t-[1px] border-solid py-4 w-11/12">
+          <ul className="flex flex-col border-t-[#E8E7E7] border-t-[1px] border-solid py-4 w-11/12">
             {RouteParams?.map((item, key) => (
               <li
                 key={key}
-                className={`flex items-center ${
-                  pathname === item.href ? 'text-[#4D77FF]' : 'text-[#D2D3D5]'
+                className={`flex w-full items-start ${
+                  pathname === item.href ? 'text-black' : 'text-[#D2D3D5]'
                 }`}
               >
                 <Link
                   onClick={() => setToggleMenu(!toggleMenu)}
                   href={item.href}
-                  className={`flex justify-center items-center gap-2 transition-all duration-300 ease-custom-bezier links-menu p-2 font-semibold text-sm `}
+                  className={`${
+                    pathname === item.href
+                      ? 'bg-[#efefef] shadow'
+                      : 'bg-transparent dark:text-[#777A81]'
+                  } font-semibold flex flex-1 p-2 px-4 m-1 rounded-xl gap-2 items-center transition-all duration-300 ease-custom-bezier links-menu text-sm `}
                 >
                   {item?.icon && item?.icon}
                   <span
                     className={`${
                       pathname === item.href
-                        ? 'text-[#4D77FF]'
-                        : 'text-[#0A0A0A] dark:text-[#F3F3F3]'
+                        ? 'text-black'
+                        : 'text-[#777A81] dark:text-[#777A81]'
                     }`}
                   >
                     {item.name}
